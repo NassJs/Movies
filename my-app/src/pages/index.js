@@ -1,11 +1,13 @@
 import AllMovies from "@/container/movie/AllMovies"
-import Style from  '../../src/styles/home.module.css';
+import { ContainerHeader } from "@/container/Header/ContainerHeader";
+
 
 export default function Home() {
 
   return (
-    <div className={Style.home}>
-     <AllMovies />
+    <div>
+      <ContainerHeader />
+      <AllMovies />
     </div>
   )
 }
