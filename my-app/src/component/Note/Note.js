@@ -1,5 +1,5 @@
-export const Note = ({children}) => {
+export const Note = ({ children }) => {
     return (
-        <span className="bg-indigo-300 w-10">{children}</span>
+        <span className="flex items-center">{children}</span>
     )
 }
