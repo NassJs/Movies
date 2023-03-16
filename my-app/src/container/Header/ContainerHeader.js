@@ -19,7 +19,7 @@ export const ContainerHeader = () => {
                     </div>
                     <div>
                         <button className="pr-4"> <GrFavorite /> </button>
-                        <button className="pr-4"> <CgDarkMode /> </button>
+                        <button> <CgDarkMode /> </button>
                     </div>
                 </div>
             </div>
