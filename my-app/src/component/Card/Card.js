@@ -1,13 +1,13 @@
-export const Card = ({ children }) => {
+export const Card = ({ children, size}) => {
     return (
-        <div className="max-w-sm rounded overflow-x-hidden bg-slate-300 shadow-xl">
+        <div className=" max-w-sm rounded w-32 bg-slate-300 shadow-xl">
             {children}
         </div>
     )
 }
 export const CardHeader = ({ children }) => {
     return (
-        <div className="card_header">
+        <div className="card_header overflow-hidden">
             {children}
         </div>
     )

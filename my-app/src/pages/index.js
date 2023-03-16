@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <ContainerHeader />
-      <div className="p-20">
+      <div className="p-28">
         <AllMovies />
       </div>
     </div>
