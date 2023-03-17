@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Form } from '../component/Textfield/Form';
 import { Input } from '@/component/Textfield/Input';
 import { Button } from '../component/Button/Button'
-
+import axios from 'axios';
 const register = () => {
     const [name, setName] = useState("")
     const [firstName, setFirstname] = useState("");
@@ -19,9 +19,14 @@ const register = () => {
     }
     const SubmitForm = (e) => {
         e.preventDefault();
-        console.log(name)
-        console.log(firstName)
-        console.log(password)
+
+        axios.post('http://localhost:8080/register', { name, firstName, password })
+            .then((response) => {
+                console.log("send", response)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 
     return (
