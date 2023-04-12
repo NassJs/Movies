@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useFavorisMov } from '@/context/FavorisMovieProvider';
 import { useGetMovies } from '../../hook/useGetMovies';
 import { Card, CardBody } from '../../component/Card/Card';
 import { Picture } from '@/component/Picture/Picture';
@@ -11,12 +10,15 @@ import { GrFavorite } from "react-icons/gr";
 
 const AllMovies = () => {
     const { allMovies } = useGetMovies();
+    const [arrLocalStorage, setArrLocalStorage] = useState([])
     const movies = allMovies;
-    const { favorisMov, addLocalFavoris } = useFavorisMov()
 
-    const handleAdd = (favoris) => {
-        addLocalFavoris(favoris)
+    const handleAddLocal = (favoris) => {
+        setArrLocalStorage([...arrLocalStorage, favoris])
+        let sendLocalStorage = localStorage.setItem("favoris", JSON.stringify(arrLocalStorage))
+        return sendLocalStorage
     }
+
     return (
         <>
             <h1 className="text-xl"> Tendance : </h1>
@@ -32,7 +34,7 @@ const AllMovies = () => {
                             </CardBody>
                             <CardFooter>
                                 <Note>  {movie.vote_average} <AiOutlineStar /> </Note>
-                                <Button onClick={() => handleAdd({ movie })} className='flex items-stretchr bg-gray-200'> <GrFavorite /> </Button>
+                                <Button onClick={() => handleAddLocal({ movie })} className='flex items-stretchr bg-gray-200'> <GrFavorite /> </Button>
                             </CardFooter>
                         </Card>
                     </div>
