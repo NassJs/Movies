@@ -1,6 +1,10 @@
+import { ContainerHeader } from "@/container/Header/ContainerHeader";
 const film = () => {
     return (
-        <div> FILM ROUTER </div>
+
+        <div>
+            <ContainerHeader />
+        </div>
     )
 }
 export default film;

@@ -1,4 +1,4 @@
-export const Card = ({ children, size}) => {
+export const Card = ({ children, xl }) => {
     return (
         <div className=" max-w-sm rounded w-32 bg-slate-300 shadow-xl">
             {children}

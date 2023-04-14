@@ -24,7 +24,7 @@ const AllMovies = () => {
             <h1 className="text-xl"> Tendance : </h1>
             <div className="flex justify-center flex-wrap">
                 {movies.map((movie) => (
-                    <div key={movie.id} className="p-4  ">
+                    <div key={movie.id} className="p-4">
                         <Card>
                             <CardHeader>
                                 <Picture src={`http://image.tmdb.org/t/p/w300${movie.backdrop_path}`} alt="film" />

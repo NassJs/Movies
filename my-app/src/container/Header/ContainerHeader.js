@@ -1,4 +1,5 @@
 import { Header } from "@/component/Header/Header"
+import Link from 'next/link'
 import { GrFavorite } from "react-icons/gr";
 import { CgDarkMode } from "react-icons/cg";
 
@@ -8,17 +9,25 @@ export const ContainerHeader = () => {
         <Header>
             <div className="pr-4 pl-4">
                 <div className="flex  justify-between p-5">
-                    <span className="pr-4">NASSMOVIES</span>
+                    <Link href="/">
+                        <span className="pr-4">NASSMOVIES</span>
+                    </Link>
                     <div className="flex">
-                        <div className="pr-2">
-                            FILM
-                        </div>
-                        <div className="pr-2">
-                            SERIE
-                        </div>
+                        <Link href="/film">
+                            <div className="pr-2">
+                                FILM
+                            </div>
+                        </Link>
+                        <Link href="/serie">
+                            <div className="pr-2">
+                                SERIE
+                            </div>
+                        </Link>
                     </div>
                     <div>
-                        <button className="pr-4"> <GrFavorite /> </button>
+                        <Link href="/favoris">
+                            <button className="pr-4"> <GrFavorite /> </button>
+                        </Link>
                         <button> <CgDarkMode /> </button>
                     </div>
                 </div>
