@@ -1,12 +1,15 @@
 import { ContainerHeader } from "@/container/Header/ContainerHeader";
-import { useGetTvPopular } from "@/hook/useGetTvPopular";
+import { TvPopular } from "@/container/Tv/TvPopular";
 const serie = () => {
 
-    const test = useGetTvPopular();
-    console.log("api", test)
+
     return (
         <div>
             <ContainerHeader />
+            <div className="p-20">
+
+                <TvPopular />
+            </div>
         </div>
     )
 }
