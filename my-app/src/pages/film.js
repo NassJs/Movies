@@ -8,7 +8,6 @@ const film = () => {
 
         <div>
             <ContainerHeader />
-
         </div>
     )
 }

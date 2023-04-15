@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useGetMovies } from '../../hook/useGetMovies';
+import { useGetMoviesTendance } from '../../hook/useGetMoviesTendance';
 import { Card, CardBody } from '../../component/Card/Card';
 import { Picture } from '@/component/Picture/Picture';
 import { Note } from '@/component/Note/Note';
@@ -10,7 +10,7 @@ import { GrFavorite } from "react-icons/gr";
 
 const AllMovies = () => {
 
-    const { allMovies } = useGetMovies();
+    const { allMovies } = useGetMoviesTendance();
     const [arrLocalStorage, setArrLocalStorage] = useState([]);
     const movies = allMovies;
 
