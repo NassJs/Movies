@@ -1,4 +1,4 @@
-import AllMovies from "@/container/movie/AllMovies"
+import AllMovies from "@/container/movie/AllMovies";
 import { ContainerHeader } from "@/container/Header/ContainerHeader";
 export default function Home() {
 

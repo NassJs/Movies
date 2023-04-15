@@ -1,6 +1,6 @@
 export const Card = ({ children, xl }) => {
     return (
-        <div className=" max-w-sm rounded w-32 bg-slate-300 shadow-xl">
+        <div className=" max-w-sm rounded w-32 bg-slate-300 shadow-xl m-4">
             {children}
         </div>
     )

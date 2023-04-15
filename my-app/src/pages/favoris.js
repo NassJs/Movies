@@ -1,11 +1,10 @@
 import { AllFavoris } from "@/container/Favoris/AllFavoris";
 import { ContainerHeader } from "@/container/Header/ContainerHeader";
 const favoris = () => {
-
     return (
         <div>
             <ContainerHeader />
-            <div className="">
+            <div className="p-20">
                 <AllFavoris />
             </div>
         </div>

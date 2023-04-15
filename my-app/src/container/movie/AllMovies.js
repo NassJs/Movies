@@ -9,15 +9,19 @@ import { AiOutlineStar } from "react-icons/ai"
 import { GrFavorite } from "react-icons/gr";
 
 const AllMovies = () => {
+
     const { allMovies } = useGetMovies();
-    const [arrLocalStorage, setArrLocalStorage] = useState([])
+    const [arrLocalStorage, setArrLocalStorage] = useState([]);
     const movies = allMovies;
 
     const handleAddLocal = (favoris) => {
+        console.log("favoris", favoris)
+        console.log("choice", favoris)
         setArrLocalStorage([...arrLocalStorage, favoris])
         let sendLocalStorage = localStorage.setItem("favoris", JSON.stringify(arrLocalStorage))
-        return sendLocalStorage
+        console.log(sendLocalStorage);
     }
+
 
     return (
         <>
@@ -45,5 +49,6 @@ const AllMovies = () => {
     )
 
 }
+
 
 export default AllMovies;
