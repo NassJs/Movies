@@ -1,54 +1,29 @@
-import { useState } from 'react';
-import { useGetMoviesTendance } from '../../hook/useGetMoviesTendance';
-import { Card, CardBody } from '../../component/Card/Card';
-import { Picture } from '@/component/Picture/Picture';
-import { Note } from '@/component/Note/Note';
-import { CardHeader, CardFooter } from '../../component/Card/Card';
-import { Button } from '../../component/Button/Button';
-import { AiOutlineStar } from "react-icons/ai"
-import { GrFavorite } from "react-icons/gr";
+import { useGetMoviePopular } from "@/hook/useGetMoviePopular";
+import { Card, CardHeader, CardBody, CardFooter } from "@/component/Card/Card";
+import { Button } from "@/component/Button/Button";
+import { Note } from "@/component/Note/Note";
+import { Picture } from "@/component/Picture/Picture";
+import { AiOutlineStar } from "react-icons/ai";
 
-const AllMovies = () => {
-
-    const { allMovies } = useGetMoviesTendance();
-    const [arrLocalStorage, setArrLocalStorage] = useState([]);
-    const movies = allMovies;
-
-    const handleAddLocal = (favoris) => {
-        console.log("favoris", favoris)
-        console.log("choice", favoris)
-        setArrLocalStorage([...arrLocalStorage, favoris])
-        let sendLocalStorage = localStorage.setItem("favoris", JSON.stringify(arrLocalStorage))
-        console.log(sendLocalStorage);
-    }
-
+export const AllMovies = () => {
+    const { popularMovie } = useGetMoviePopular();
 
     return (
-        <>
-            <h1 className="text-xl"> Tendance : </h1>
-            <div className="flex justify-center flex-wrap">
-                {movies.map((movie) => (
-                    <div key={movie.id} className="p-4">
-                        <Card>
-                            <CardHeader>
-                                <Picture src={`http://image.tmdb.org/t/p/w300${movie.backdrop_path}`} alt="film" />
-                            </CardHeader>
-                            <CardBody>
-                                <p className=" flex justify-center p-4 text-xs truncate"> {movie.title}</p>
-                            </CardBody>
-                            <CardFooter>
-                                <Note>  {movie.vote_average} <AiOutlineStar /> </Note>
-                                <Button onClick={() => handleAddLocal({ movie })} className='flex items-stretchr bg-gray-200'> <GrFavorite /> </Button>
-                            </CardFooter>
-                        </Card>
-                    </div>
-                ))}
-            </div>
-        </>
-
+        <div className="flex flex-wrap justify-center">
+            {popularMovie.map((popular) => (
+                <Card key={popular.id}>
+                    <CardHeader>
+                        <Picture size=" object-fill h-48 w-80" src={`http://image.tmdb.org/t/p/w300${popular.backdrop_path}`} />
+                    </CardHeader>
+                    <CardBody>
+                        <p className="flex justify-center p-4 text-xs truncate"> {popular.original_title.substr(0, 15)}</p>
+                    </CardBody>
+                    <CardFooter>
+                        <Note> {popular.vote_average}  <AiOutlineStar /></Note>
+                        <div className="text-sm"> {popular.release_date}</div>
+                    </CardFooter>
+                </Card>
+            ))}
+        </div>
     )
-
-}
-
-
-export default AllMovies;
+} 

@@ -2,8 +2,8 @@ import { useGetTvPopular } from "@/hook/useGetTvPopular";
 import { Picture } from "@/component/Picture/Picture";
 import { Note } from "@/component/Note/Note";
 import { Card, CardHeader, CardBody, CardFooter } from "@/component/Card/Card";
-import { Button } from "@/component/Button/Button";
-import { GrFavorite } from "react-icons/gr";
+import { AiOutlineStar } from "react-icons/ai";
+
 export const TvPopular = () => {
     const { tvPopular } = useGetTvPopular();
 
@@ -12,14 +12,13 @@ export const TvPopular = () => {
             {tvPopular.map((popular) => (
                 <Card key={popular.id}>
                     <CardHeader>
-                        <Picture src={`http://image.tmdb.org/t/p/w300${popular.backdrop_path}`} />
+                        <Picture size="h-48 w-80" src={`http://image.tmdb.org/t/p/w300${popular.backdrop_path}`} />
                     </CardHeader>
                     <CardBody>
-                        <h1> {popular.name}</h1>
+                        <p className="flex justify-center p-4 text-xs truncate"> {popular.name.substr(0, 15)}</p>
                     </CardBody>
                     <CardFooter>
-                        <Note> {popular.vote_average}</Note>
-                        <Button > <GrFavorite /> </Button>
+                        <Note> {popular.vote_average} <AiOutlineStar /> </Note>
                     </CardFooter>
                 </Card>
             ))}

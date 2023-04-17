@@ -1,13 +1,16 @@
 import { ContainerHeader } from "@/container/Header/ContainerHeader";
-import { useGetMoviePopular } from "@/hook/useGetMoviePopular";
+import { AllMovies } from "@/container/Movie/AllMovies";
 const film = () => {
 
-    const { popularMovie } = useGetMoviePopular();
-    console.log("popular", popularMovie)
+
     return (
 
         <div>
             <ContainerHeader />
+
+            <div className="pt-20 pl-10 pr-10">
+                <AllMovies />
+            </div>
         </div>
     )
 }

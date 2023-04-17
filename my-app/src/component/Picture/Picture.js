@@ -1,7 +1,7 @@
-export const Picture = ({ src, alt }) => {
+export const Picture = ({ src, alt, size }) => {
   return (
     <>
-      <img className="h-40 w-40 " src={src} alt={alt} />
+      <img className={size} src={src} alt={alt} />
     </>
   )
 }
