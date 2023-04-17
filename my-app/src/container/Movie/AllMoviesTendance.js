@@ -17,7 +17,7 @@ const AllMoviesTendance = () => {
     const handleAddLocal = (favoris) => {
         setArrLocalStorage([...arrLocalStorage, favoris])
         let sendLocalStorage = localStorage.setItem("favoris", JSON.stringify(arrLocalStorage))
-        console.log(sendLocalStorage);
+        return sendLocalStorage;
     }
 
 
