@@ -18,7 +18,7 @@ export const TvPopular = () => {
                         <p className="flex justify-center p-4 text-xs truncate"> {popular.name.substr(0, 15)}</p>
                     </CardBody>
                     <CardFooter>
-                        <Note> {popular.vote_average} <AiOutlineStar /> </Note>
+                        <Note variant="flex items-center"> {popular.vote_average} <AiOutlineStar /> </Note>
                     </CardFooter>
                 </Card>
             ))}

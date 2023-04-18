@@ -20,7 +20,7 @@ export const AllMovies = () => {
                             <p className="flex justify-center p-4 text-xs truncate"> {popular.original_title.substr(0, 15)}</p>
                         </CardBody>
                         <CardFooter>
-                            <Note> {popular.vote_average}  <AiOutlineStar /></Note>
+                            <Note variant="flex items-center"> {popular.vote_average}  <AiOutlineStar /></Note>
                             <div className="text-sm"> {popular.release_date}</div>
                         </CardFooter>
                     </Card>

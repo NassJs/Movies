@@ -30,7 +30,7 @@ export const AllFavoris = () => {
                             <CardBody>
                                 <p className='flex justify-center p-4 text-xs truncate'> {all.movie.title.substr(0, 15)}</p>
                             </CardBody>
-                            <Note>  {all.movie.vote_average} <AiOutlineStar /> </Note>
+                            <Note variant="flex items-center">  {all.movie.vote_average} <AiOutlineStar /> </Note>
                         </Card>
                     ))}
                 </div>

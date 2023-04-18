@@ -35,7 +35,7 @@ const AllMoviesTendance = () => {
                                 <p className=" flex justify-center p-4 text-xs truncate"> {movie.title.substr(0, 15)}</p>
                             </CardBody>
                             <CardFooter>
-                                <Note>  {movie.vote_average} <AiOutlineStar /> </Note>
+                                <Note variant="flex items-center">  {movie.vote_average} <AiOutlineStar /> </Note>
                                 <Button onClick={() => handleAddLocal({ movie })} className='flex items-stretchr bg-gray-200'> <GrFavorite /> </Button>
                             </CardFooter>
                         </Card>
