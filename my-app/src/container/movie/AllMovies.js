@@ -14,7 +14,7 @@ export const AllMovies = () => {
                 <Link href={`movies/${encodeURIComponent(popular.original_title)}`}>
                     <Card Card key={popular.id}>
                         <CardHeader>
-                            <Picture size=" object-fill h-48 w-80" src={`http://image.tmdb.org/t/p/w300${popular.backdrop_path}`} />
+                            <Picture size=" object-fill h-48 w-80" src={`https://image.tmdb.org/t/p/original//${popular.backdrop_path}`} />
                         </CardHeader>
                         <CardBody>
                             <p className="flex justify-center p-4 text-xs truncate"> {popular.original_title.substr(0, 15)}</p>
