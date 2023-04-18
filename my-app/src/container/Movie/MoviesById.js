@@ -5,6 +5,9 @@ import { Picture } from '@/component/Picture/Picture';
 import { Title, SousTitle } from '@/component/Title/Title';
 import { Score } from '@/component/Score/Score';
 import { Note } from '@/component/Note/Note';
+import { Button } from '@/component/Button/Button';
+import { BiLike, BiDislike } from "react-icons/bi";
+
 export const MoviesById = () => {
     const router = useRouter();
     const { id } = router.query;
@@ -29,6 +32,8 @@ export const MoviesById = () => {
                                 <Score> {movie.vote_average} / 10 </Score>
                                 <Note> (Vote user : {movie.vote_count})</Note>
                                 <SousTitle variant="text-xl pt-4 pb-4"> {movie.overview}</SousTitle>
+                                <Button> <BiLike /> </Button>
+                                <Button> <BiDislike /> </Button>
                             </div>
                         </div>
                     </div>
