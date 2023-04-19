@@ -13,7 +13,7 @@ export const ContainerHeader = () => {
                         <span className="pr-4">NASSMOVIES</span>
                     </Link>
                     <div className="flex">
-                        <Link href="/film">
+                        <Link href="/movies">
                             <div className="pr-2">
                                 FILM
                             </div>

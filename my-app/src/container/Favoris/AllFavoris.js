@@ -25,12 +25,12 @@ export const AllFavoris = () => {
                     {getFavoris.map((all) => (
                         <Card>
                             <CardHeader>
-                                <Picture size="h-64 w-64" src={`http://image.tmdb.org/t/p/w300${all.movie.backdrop_path}`} />
+                                <Picture size="h-64 w-64" src={`https://image.tmdb.org/t/p/original//${all.movie.backdrop_path}`} />
                             </CardHeader>
                             <CardBody>
                                 <p className='flex justify-center p-4 text-xs truncate'> {all.movie.title.substr(0, 15)}</p>
                             </CardBody>
-                            <Note>  {all.movie.vote_average} <AiOutlineStar /> </Note>
+                            <Note variant="flex items-center">  {all.movie.vote_average} <AiOutlineStar /> </Note>
                         </Card>
                     ))}
                 </div>
