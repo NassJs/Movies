@@ -1,6 +1,6 @@
-export const Card = ({ children, }) => {
+export const Card = ({ children, className }) => {
     return (
-        <div className="max-w-sm rounded w-32 bg-slate-300 shadow-xl m-4">
+        <div className={className}>
             {children}
         </div>
     )
@@ -19,9 +19,9 @@ export const CardBody = ({ children }) => {
         </div>
     )
 }
-export const CardFooter = ({ children }) => {
+export const CardFooter = ({ children, className }) => {
     return (
-        <div className="flex justify-around items-center">
+        <div className={className}>
             {children}
         </div>
     )
