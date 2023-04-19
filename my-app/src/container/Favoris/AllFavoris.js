@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Picture } from '@/component/Picture/Picture'
-import { AiOutlineStar } from "react-icons/ai"
-import { Note } from '@/component/Note/Note'
 import { Card, CardBody, CardHeader } from '@/component/Card/Card'
+import { SousTitle } from '@/component/Title/Title';
 
 export const AllFavoris = () => {
 
@@ -12,7 +11,6 @@ export const AllFavoris = () => {
         let parse = JSON.parse(getKey)
         setGetFavoris(parse)
     }
-
     useEffect(() => {
         getAllFavoris("favoris")
     }, [])
@@ -23,14 +21,13 @@ export const AllFavoris = () => {
                 <h1> All Favoris </h1>
                 <div className="flex justify-center flex-wrap">
                     {getFavoris.map((all) => (
-                        <Card>
+                        <Card className="max-w-sm rounded  bg-slate-200 shadow-xl m-4">
                             <CardHeader>
                                 <Picture size="h-64 w-64" src={`https://image.tmdb.org/t/p/original//${all.movie.backdrop_path}`} />
                             </CardHeader>
                             <CardBody>
-                                <p className='flex justify-center p-4 text-xs truncate'> {all.movie.title.substr(0, 15)}</p>
+                                <SousTitle variant="flex justify-center"> {all.movie.original_title.substr(0, 15)}</SousTitle>
                             </CardBody>
-                            <Note variant="flex items-center">  {all.movie.vote_average} <AiOutlineStar /> </Note>
                         </Card>
                     ))}
                 </div>

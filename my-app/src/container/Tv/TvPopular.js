@@ -3,6 +3,7 @@ import { Picture } from "@/component/Picture/Picture";
 import { Note } from "@/component/Note/Note";
 import { Card, CardHeader, CardBody, CardFooter } from "@/component/Card/Card";
 import { AiOutlineStar } from "react-icons/ai";
+import { SousTitle } from "@/component/Title/Title";
 
 export const TvPopular = () => {
     const { tvPopular } = useGetTvPopular();
@@ -10,14 +11,14 @@ export const TvPopular = () => {
     return (
         <div className="flex flex-wrap justify-center">
             {tvPopular.map((popular) => (
-                <Card key={popular.id}>
+                <Card className="max-w-sm rounded  bg-slate-300 shadow-xl m-4" key={popular.id}>
                     <CardHeader>
                         <Picture size="h-48 w-80" src={`http://image.tmdb.org/t/p/w300${popular.backdrop_path}`} />
                     </CardHeader>
                     <CardBody>
-                        <p className="flex justify-center p-4 text-xs truncate"> {popular.name.substr(0, 15)}</p>
+                        <SousTitle variant="flex justify-center"> {popular.name.substr(0, 15)}</SousTitle>
                     </CardBody>
-                    <CardFooter>
+                    <CardFooter className="flex justify-around items-center">
                         <Note variant="flex items-center"> {popular.vote_average} <AiOutlineStar /> </Note>
                     </CardFooter>
                 </Card>
