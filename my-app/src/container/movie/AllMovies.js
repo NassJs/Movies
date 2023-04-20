@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export const AllMovies = () => {
     const { popularMovie } = useGetMoviePopular();
-    console.log(popularMovie)
+
     return (
         <div className="flex flex-wrap justify-center">
             {popularMovie.map((popular) => (
