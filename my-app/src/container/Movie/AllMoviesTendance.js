@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useGetMoviesTendance } from '../../hook/useGetMoviesTendance';
+import { useMovieFavoris } from '@/context/LocalStorageProvider';
 import { Card, CardBody } from '../../component/Card/Card';
 import { Picture } from '@/component/Picture/Picture';
 import { Note } from '@/component/Note/Note';
@@ -10,24 +11,18 @@ import { GrFavorite } from "react-icons/gr";
 import { Toast } from '@/component/Toast/Toast';
 import { FcCheckmark } from "react-icons/fc";
 
-const AllMoviesTendance = () => {
+export const AllMoviesTendance = () => {
 
     const { allMovies } = useGetMoviesTendance();
-    const [showToast, setShowToast] = useState(true)
-    const [arrLocalStorage, setArrLocalStorage] = useState([]);
+    const [showToast, setShowToast] = useState(true);
+    const { addLocalStorage } = useMovieFavoris();
     const movies = allMovies;
 
-    const handleActiveToast = () => {
+    const handleAddLocal = (favoris) => {
         setTimeout(() => {
             setShowToast(!showToast)
         }, 1000)
-    }
-
-    const handleAddLocal = (favoris) => {
-        setArrLocalStorage([...arrLocalStorage, favoris])
-        let sendLocalStorage = localStorage.setItem("favoris", JSON.stringify(arrLocalStorage))
-        handleActiveToast(favoris)
-        return sendLocalStorage;
+        addLocalStorage(favoris)
     }
 
     return (
@@ -60,6 +55,3 @@ const AllMoviesTendance = () => {
     )
 
 }
-
-
-export default AllMoviesTendance;
