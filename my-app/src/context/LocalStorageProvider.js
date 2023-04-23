@@ -27,8 +27,6 @@ export const useMovieFavoris = () => {
         return sendLocalStorage;
     }
 
-    // const getLocal = () => {
 
-    // }
-    return { addLocalStorage }
+    return { addLocalStorage, favoris }
 }

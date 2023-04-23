@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react'
 import { Picture } from '@/component/Picture/Picture'
 import { Card, CardBody, CardHeader } from '@/component/Card/Card'
 import { SousTitle } from '@/component/Title/Title';
-
+import { useMovieFavoris } from '@/context/LocalStorageProvider';
 export const AllFavoris = () => {
 
     const [getFavoris, setGetFavoris] = useState([])
+    console.log(getFavoris)
     const getAllFavoris = (key) => {
         let getKey = localStorage.getItem(key)
         let parse = JSON.parse(getKey)
         setGetFavoris(parse)
     }
+
     useEffect(() => {
         getAllFavoris("favoris")
     }, [])
@@ -23,10 +25,10 @@ export const AllFavoris = () => {
                     {getFavoris.map((all) => (
                         <Card className="max-w-sm rounded  bg-slate-200 shadow-xl m-4">
                             <CardHeader>
-                                <Picture size="h-64 w-64" src={`https://image.tmdb.org/t/p/original//${all.movie.backdrop_path}`} />
+                                <Picture size="h-64 w-64" src={`https://image.tmdb.org/t/p/original//${all.backdrop_path}`} />
                             </CardHeader>
                             <CardBody>
-                                <SousTitle variant="flex justify-center"> {all.movie.original_title.substr(0, 15)}</SousTitle>
+                                <SousTitle variant="flex justify-center"> {all.original_title.substr(0, 15)}</SousTitle>
                             </CardBody>
                         </Card>
                     ))}
