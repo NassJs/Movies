@@ -1,30 +1,26 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Tag } from "@/component/Tag/Tag"
 import { useGetGenreMovie } from "@/hook/useGetGenreMovie"
 
 
 export const GenreMovie = ({ id }) => {
-    const { genreMovie } = useGetGenreMovie()
-    // const copyGenreMovie = genreMovie.genres;
-    console.log("genreMovie", genreMovie);
-    let genreName = [];
+    const { genreMovie } = useGetGenreMovie();
+    const [genre, setGenre] = useState([])
+    console.log("genre", genre.flat())
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     const filterGenre = () => {
-    //         for (let i = 0; i < id.length; i++) {
-    //             console.log("id", id[i])
-    //             let filter = copyGenreMovie.filter(fil => fil.id === id[i])
-    //             console.log("filter", filter)
-
-
-    //         }
-    //         console.log("arrName", genreName)
-    //     }
-    //     filterGenre();
-    // }, [])
-    // if (genreMovie) {
-
+        const filterGenre = () => {
+            for (let i = 0; i < id.length; i++) {
+                console.log("id", id[i])
+                let filter = genreMovie.filter(fil => fil.id === id[i])
+                if (filter) {
+                    setGenre([genre, filter])
+                }
+            }
+        }
+        filterGenre();
+    }, [genreMovie])
 
     return (
         <>
