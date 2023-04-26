@@ -1,6 +1,6 @@
-export const Tag = ({ children }) => {
+export const Tag = ({ children, className }) => {
     return (
 
-        <div> {children} </div>
+        <div className={className}> {children} </div>
     )
 }

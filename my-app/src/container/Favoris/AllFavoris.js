@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Picture } from '@/component/Picture/Picture'
 import { Card, CardBody, CardHeader } from '@/component/Card/Card'
-import { SousTitle } from '@/component/Title/Title';
+import { SubTitle } from '@/component/Title/Title';
 import { useMovieFavoris } from '@/context/LocalStorageProvider';
 export const AllFavoris = () => {
 
@@ -28,7 +28,7 @@ export const AllFavoris = () => {
                                 <Picture size="h-64 w-64" src={`https://image.tmdb.org/t/p/original//${all.backdrop_path}`} />
                             </CardHeader>
                             <CardBody>
-                                <SousTitle variant="flex justify-center"> {all.original_title.substr(0, 15)}</SousTitle>
+                                <SubTitle variant="flex justify-center"> {all.original_title.substr(0, 15)}</SubTitle>
                             </CardBody>
                         </Card>
                     ))}

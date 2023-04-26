@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useGetMoviePopular } from '@/hook/useGetMoviePopular';
 import { Picture } from '@/component/Picture/Picture';
-import { Title, SousTitle } from '@/component/Title/Title';
+import { Title, SubTitle } from '@/component/Title/Title';
 import { Score } from '@/component/Score/Score';
 import { Note } from '@/component/Note/Note';
 import { Button } from '@/component/Button/Button';
@@ -27,10 +27,10 @@ export const MoviesById = () => {
                             <div className="p-4">
                                 <Title variant="text-3xl"> {movie.title} </Title>
                                 <Score> {movie.vote_average} / 10 </Score>
-                                <span> Genre : </span>
-                                <GenreMovie id={movie.genre_ids} />
                                 <Note> (Vote user : {movie.vote_count})</Note>
-                                <SousTitle variant="text-xl pt-4 pb-4"> {movie.overview}</SousTitle>
+                                {/* <SubTitle> Genre : </SubTitle> */}
+                                <GenreMovie id={movie.genre_ids} />
+                                <SubTitle variant="text-xl pt-4 pb-4"> {movie.overview}</SubTitle>
                                 <Button> <BiLike /> </Button>
                                 <Button> <BiDislike /> </Button>
                             </div>
