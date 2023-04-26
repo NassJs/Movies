@@ -11,7 +11,7 @@ import { GrFavorite } from "react-icons/gr";
 import { Toast } from '@/component/Toast/Toast';
 import { FcCheckmark } from "react-icons/fc";
 
-export const AllMoviesTendance = () => {
+export const TrendingMovies = () => {
 
     const { allMovies } = useGetMoviesTendance();
     const [showToast, setShowToast] = useState(true);

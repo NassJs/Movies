@@ -4,7 +4,7 @@ import { Note } from "@/component/Note/Note";
 import { GrFavorite } from "react-icons/gr";
 import { Picture } from "@/component/Picture/Picture";
 import { AiOutlineStar } from "react-icons/ai";
-import { SousTitle } from "@/component/Title/Title";
+import { SubTitle } from "@/component/Title/Title";
 import Link from 'next/link';
 
 export const AllMovies = () => {
@@ -20,7 +20,7 @@ export const AllMovies = () => {
                             <Picture size=" object-fill h-48 w-80" src={`https://image.tmdb.org/t/p/original//${popular.backdrop_path}`} />
                         </CardHeader>
                         <CardBody>
-                            <SousTitle variant="flex justify-center"> {popular.original_title.substr(0, 15)}</SousTitle>
+                            <SubTitle variant="flex justify-center"> {popular.original_title.substr(0, 15)}</SubTitle>
                         </CardBody>
                         <CardFooter className="flex justify-around items-center">
                             <Note variant="flex items-center"> {popular.vote_average}  <AiOutlineStar /></Note>
