@@ -10,7 +10,6 @@ import { Button } from '@/component/Button/Button';
 export const AllFavoris = () => {
 
     const [getFavoris, setGetFavoris] = useState([])
-    console.log(getFavoris)
     const getAllFavoris = (key) => {
         let getKey = localStorage.getItem(key)
         let parse = JSON.parse(getKey)
