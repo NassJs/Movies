@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Picture } from '@/component/Picture/Picture'
 import { Card, CardBody, CardHeader } from '@/component/Card/Card'
 import { SubTitle } from '@/component/Title/Title';
 import { useMovieFavoris } from '@/context/LocalStorageProvider';
+import { FiTrash2 } from "react-icons/fi";
 import { Button } from '@/component/Button/Button';
+
+
 export const AllFavoris = () => {
 
     const [getFavoris, setGetFavoris] = useState([])
-
+    console.log(getFavoris)
     const getAllFavoris = (key) => {
         let getKey = localStorage.getItem(key)
         let parse = JSON.parse(getKey)
@@ -15,7 +18,6 @@ export const AllFavoris = () => {
     }
 
     const handleDelete = ({ id }) => {
-        console.log("id", id)
         const deleteMovie = getFavoris.filter((item) => item.id !== id)
         setGetFavoris(deleteMovie)
     }
@@ -27,7 +29,7 @@ export const AllFavoris = () => {
     if (getFavoris.length > 0)
         return (
             <div>
-                <h1> All Favoris </h1>
+                <SubTitle> Vous avez {getFavoris.length} favoris : </SubTitle>
                 <div className="flex justify-center flex-wrap">
                     {getFavoris.map((all) => (
                         <Card key={all.id} className="max-w-sm rounded  bg-slate-200 shadow-xl m-4">
@@ -36,7 +38,10 @@ export const AllFavoris = () => {
                             </CardHeader>
                             <CardBody>
                                 <SubTitle variant="flex justify-center"> {all.original_title.substr(0, 15)}</SubTitle>
-                                <Button onClick={() => handleDelete(all)}> Delete </Button>
+                                <div className="flex justify-around">
+                                    <div>{all.release_date}</div>
+                                    <Button className="text-xxl hover:bg-grey-600" onClick={() => handleDelete(all)}>  <FiTrash2 /> </Button>
+                                </div>
                             </CardBody>
                         </Card>
                     ))}
