@@ -10,7 +10,7 @@ export const MoviesStorageProvider = ({ children }) => {
     }), [favoris])
 
     return (
-        <MoviesStorageContext.Provider value={{ favoris, setFavoris }}>
+        <MoviesStorageContext.Provider value={value}>
             {children}
         </MoviesStorageContext.Provider>
     )
