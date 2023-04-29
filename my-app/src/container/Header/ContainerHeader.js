@@ -14,7 +14,7 @@ export const ContainerHeader = () => {
                     </Link>
                     <div className="flex">
                         <Link href="/movies">
-                            <div className="pr-2">
+                            <div className="pr-2 hover:color-sky-500/75">
                                 FILM
                             </div>
                         </Link>

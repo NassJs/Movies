@@ -13,8 +13,9 @@ export const MoviesById = () => {
     const router = useRouter();
     const { id } = router.query;
     const { popularMovie } = useGetMoviePopular();
+    console.log(popularMovie)
     const moviesId = popularMovie.filter((e) => e.original_title === id)
-
+    console.log("movies", moviesId)
     if (moviesId)
         return (
             <>
