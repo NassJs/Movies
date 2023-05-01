@@ -7,15 +7,14 @@ import { Note } from '@/component/Note/Note';
 import { Button } from '@/component/Button/Button';
 import { BiLike, BiDislike } from "react-icons/bi";
 import { GenreMovie } from './GenreMovie';
-
+import { ActorById } from '../Actor/ActorById';
 
 export const MoviesById = () => {
     const router = useRouter();
     const { id } = router.query;
     const { popularMovie } = useGetMoviePopular();
-    console.log(popularMovie)
     const moviesId = popularMovie.filter((e) => e.original_title === id)
-    console.log("movies", moviesId)
+
     if (moviesId)
         return (
             <>
@@ -29,15 +28,14 @@ export const MoviesById = () => {
                                 <Title variant="text-3xl"> {movie.title} </Title>
                                 <Score> {movie.vote_average} / 10 </Score>
                                 <Note> (Vote user : {movie.vote_count})</Note>
-                                {/* <SubTitle> Genre : </SubTitle> */}
                                 <GenreMovie id={movie.genre_ids} />
                                 <SubTitle variant="text-xl pt-4 pb-4"> {movie.overview}</SubTitle>
                                 <Button> <BiLike /> </Button>
                                 <Button> <BiDislike /> </Button>
                             </div>
+                            <ActorById id={movie.id} />
                         </div>
                     ))}
-
                 </div>
             </>
         )
