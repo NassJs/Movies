@@ -1,7 +1,6 @@
 import { useGetMoviePopular } from "@/hook/useGetMoviePopular";
 import { Card, CardHeader, CardBody, CardFooter } from "@/component/Card/Card";
 import { Note } from "@/component/Note/Note";
-import { GrFavorite } from "react-icons/gr";
 import { Picture } from "@/component/Picture/Picture";
 import { AiOutlineStar } from "react-icons/ai";
 import { SubTitle } from "@/component/Title/Title";
@@ -9,7 +8,6 @@ import Link from 'next/link';
 
 export const AllMovies = () => {
     const { popularMovie } = useGetMoviePopular();
-
 
     return (
         <div className="flex flex-wrap justify-center">

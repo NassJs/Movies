@@ -5,7 +5,6 @@ import { Title } from "@/component/Title/Title"
 
 export const ActorById = (id) => {
     const actors = useActor(id)
-    console.log("actors", actors)
     if (actors)
         return (
             <div className="flex gap-5">
@@ -19,6 +18,7 @@ export const ActorById = (id) => {
                         </CardFooter>
                     </Card>
                 ))}
+
             </div>
         )
 }

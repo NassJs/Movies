@@ -8,7 +8,7 @@ import { Button } from '@/component/Button/Button';
 import { BiLike, BiDislike } from "react-icons/bi";
 import { GenreMovie } from './GenreMovie';
 import { ActorById } from '../Actor/ActorById';
-
+import { ContainerHeader } from '../Header/ContainerHeader';
 export const MoviesById = () => {
     const router = useRouter();
     const { id } = router.query;
@@ -18,8 +18,8 @@ export const MoviesById = () => {
     if (moviesId)
         return (
             <>
-                <div className='m-2 mt-28 p-10'>
-                    <Button className="h-12 w-20 border-2 bg-slate-100 hover:bg-slate-400 rounded-full" onClick={() => router.back()}>  Retour </Button>
+                <Button className="h-12 w-20 m-10 border-2 bg-slate-100 hover:bg-slate-400 rounded-full" onClick={() => router.back()}>  Retour </Button>
+                <div className='p-10'>
                     {moviesId.map((movie) => (
                         <>
                             <div key={movie.id} className='flex p-4'>
