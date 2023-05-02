@@ -13,7 +13,7 @@ export const AllMovies = () => {
         <div className="flex flex-wrap justify-center">
             {popularMovie.map((popular) => (
                 <Link href={`movies/${encodeURIComponent(popular.original_title)}`}>
-                    <Card className="max-w-sm rounded  bg-slate-200 shadow-xl m-4" key={popular.id}>
+                    <Card key={popular.id} className="max-w-sm rounded  bg-slate-200 shadow-xl m-4" key={popular.id}>
                         <CardHeader>
                             <Picture size=" object-fill h-48 w-80" src={`https://image.tmdb.org/t/p/original//${popular.backdrop_path}`} />
                         </CardHeader>

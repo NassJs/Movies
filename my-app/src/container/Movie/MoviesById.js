@@ -35,7 +35,9 @@ export const MoviesById = () => {
                                     <Button> <BiDislike /> </Button>
                                 </div>
                             </div>
-                            <ActorById id={movie.id} />
+                            <div className='pt-10'>
+                                <ActorById id={movie.id} />
+                            </div>
                         </>
                     ))}
                 </div>
