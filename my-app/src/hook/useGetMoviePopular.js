@@ -5,8 +5,8 @@ export const useGetMoviePopular = () => {
     const [popularMovie, setPopularMovie] = useState([]);
 
     useEffect(() => {
-        const getPopularMovie = async () => {
-            await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=8604e58bc23d1024de104bb5bbc43a27`)
+        const getPopularMovie = () => {
+            axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=8604e58bc23d1024de104bb5bbc43a27`)
                 .then((response) => {
                     setPopularMovie(response.data.results)
                 })

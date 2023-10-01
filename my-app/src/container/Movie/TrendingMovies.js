@@ -31,7 +31,7 @@ export const TrendingMovies = () => {
                 {showToast ? true : <Toast variant=" flex justify-center items-center align bg-green-100 w-40">  Ajouter au favoris <FcCheckmark /> </Toast>}
             </div>
             <h1 className="text-xl"> Tendance : </h1>
-            <div className="flex justify-center flex-wrap">
+            <div className=" flex flex-row">
                 {movies.map((movie) => (
                     <div key={movie.id} className="p-4">
                         <Card className="max-w-sm rounded  bg-slate-300 shadow-xl m-4">
