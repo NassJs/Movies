@@ -5,7 +5,7 @@ export const useGetTvPopular = () => {
     const [tvPopular, setTvPopular] = useState([])
 
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3//tv/popular?api_key=0670a5a788c4054210c0beadffe00f82`)
+        axios.get(`https://api.themoviedb.org/3//tv/popular?api_key=8604e58bc23d1024de104bb5bbc43a27`)
             .then((response) => {
                 setTvPopular(response.data.results)
             })

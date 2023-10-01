@@ -6,7 +6,7 @@ export const useGetGenreMovie = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            await axios.get(`https://api.themoviedb.org/3//genre/movie/list?api_key=0670a5a788c4054210c0beadffe00f82`)
+            await axios.get(`https://api.themoviedb.org/3//genre/movie/list?api_key=8604e58bc23d1024de104bb5bbc43a27`)
                 .then((res) => {
 
                     setGenreMovie(res.data.genres)
